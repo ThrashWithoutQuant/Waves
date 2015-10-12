@@ -1,5 +1,9 @@
 package com.example.foleakey.waves;
 
+/**
+ * Created by FoLeakey on 2015/10/07.
+ */
+
 import android.os.Bundle;
 import android.app.AlertDialog;
 import android.app.Activity;
@@ -19,6 +23,7 @@ import android.content.SharedPreferences.Editor;
 public class MainActivity extends Activity {
 
     public static String DestinationAddress = null;
+    public static TextView value1,value2;
     private EditText phoneNumberEditText;
     private Button button;
     private Switch switch1;
@@ -32,6 +37,8 @@ public class MainActivity extends Activity {
         setContentView(R.layout.activity_main);
 
         phoneNumberEditText = (EditText) findViewById(R.id.PNeText);
+        value1=(TextView)findViewById(R.id.testText1);
+        value2=(TextView)findViewById(R.id.testText2);
         //button = (Button) findViewById(R.id.Btn);
         switch1 = (Switch) findViewById(R.id.switch1);
         ck = (CheckBox) findViewById(R.id.isInterceptor);

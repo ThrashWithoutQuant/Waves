@@ -9,15 +9,17 @@ import android.telephony.SmsMessage;
 import android.util.Log;
 import android.widget.Toast;
 import com.example.foleakey.waves.MainActivity;
+import com.example.foleakey.waves.Filter;
 
 /**
- * Created by folea on 2015-10-07.
+ * Created by FoLeakey on 2015/10/07.
  */
 
 public class Receiver extends BroadcastReceiver {
 
     public static int switcher = 0;
     public static final int START_STICKY = 1;
+    public static SmsMessage[] tmsg;
 
     @Override
     public void onReceive(Context context, Intent intent) {
@@ -33,6 +35,8 @@ public class Receiver extends BroadcastReceiver {
                 for (int i = 0; i < pdus.length; i++) {
                     message[i] = SmsMessage.createFromPdu((byte[]) pdus[i]);
                 }
+                Filter.numberfilter(message);
+                Filter.textfilter(message);
                 // format the sms and send.
                 for (SmsMessage smsMessage : message) {
                     sbBuilder.append("From：");
