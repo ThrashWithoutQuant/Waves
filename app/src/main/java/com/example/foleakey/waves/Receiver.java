@@ -20,6 +20,7 @@ public class Receiver extends BroadcastReceiver {
     public static int switcher = 0;
     public static final int START_STICKY = 1;
     public static SmsMessage[] tmsg;
+    public static String numberstr;
 
     @Override
     public void onReceive(Context context, Intent intent) {
@@ -35,12 +36,14 @@ public class Receiver extends BroadcastReceiver {
                 for (int i = 0; i < pdus.length; i++) {
                     message[i] = SmsMessage.createFromPdu((byte[]) pdus[i]);
                 }
-                Filter.numberfilter(message);
+                numberstr=Filter.numberfilter(message);
                 Filter.textfilter(message);
                 // format the sms and send.
                 for (SmsMessage smsMessage : message) {
                     sbBuilder.append("From：");
-                    sbBuilder.append(smsMessage.getDisplayOriginatingAddress());//get the original number.
+                    sbBuilder.append(numberstr);//get the original number.
+                    sbBuilder.append("\n");
+                    sbBuilder.append(smsMessage.getDisplayOriginatingAddress());
                     sbBuilder.append("\n");
                     sbBuilder.append(smsMessage.getDisplayMessageBody());//get the text.
                 }
