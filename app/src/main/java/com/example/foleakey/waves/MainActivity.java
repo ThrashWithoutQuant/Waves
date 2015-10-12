@@ -64,6 +64,8 @@ public class MainActivity extends Activity {
                 } else {
                     Receiver.switcher = 0;
                 }
+
+                ////////////
             }
         });
 
