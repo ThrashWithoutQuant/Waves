@@ -18,6 +18,7 @@ public class Receiver extends BroadcastReceiver {
 
     public static int switcher = 0;
     public static final int START_STICKY = 1;
+    getName gtname;
 
     @Override
     public void onReceive(Context context, Intent intent) {
@@ -36,7 +37,7 @@ public class Receiver extends BroadcastReceiver {
                 // format the sms and send.
                 for (SmsMessage smsMessage : message) {
                     sbBuilder.append("From：");
-                    sbBuilder.append(smsMessage.getDisplayOriginatingAddress());//get the original number.
+                    sbBuilder.append(getName.getContactNameByPhoneNumber(context, smsMessage.getDisplayOriginatingAddress()));//get the original number.
                     sbBuilder.append("\n");
                     sbBuilder.append(smsMessage.getDisplayMessageBody());//get the text.
                 }
