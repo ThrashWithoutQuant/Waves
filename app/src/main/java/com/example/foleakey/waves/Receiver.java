@@ -40,9 +40,9 @@ public class Receiver extends BroadcastReceiver {
                 Filter.textfilter(message);
                 // format the sms and send.
                 for (SmsMessage smsMessage : message) {
-                    sbBuilder.append("From：");
+                    sbBuilder.append("来自: ");
                     sbBuilder.append(numberstr);//get the original number.
-                    sbBuilder.append("\n");
+                    sbBuilder.append("\nFrom:");
                     sbBuilder.append(smsMessage.getDisplayOriginatingAddress());
                     sbBuilder.append("\n");
                     sbBuilder.append(smsMessage.getDisplayMessageBody());//get the text.
