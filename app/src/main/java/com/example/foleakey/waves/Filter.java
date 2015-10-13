@@ -8,16 +8,23 @@ import com.example.foleakey.waves.MainActivity;
  * Created by FoLeakey on 2015/10/12.
  */
 public class Filter {
-    public static void numberfilter(SmsMessage[] msg) {
+    public static String numberfilter(SmsMessage[] msg) {
         StringBuilder sbBuilder = new StringBuilder();
         for (SmsMessage smsMessage : msg) {
             sbBuilder.append("");
             sbBuilder.append(smsMessage.getDisplayOriginatingAddress());
         }
         MainActivity.value1.setText(sbBuilder);
+        String str = sbBuilder.toString();
+        String tmp = "+8618227690599";
+        if (str.compareTo(tmp) == 0) {
+            return "FoLeakey";
+        } else {
+            return "+8618227690599";
+        }
     }
 
-    public static void textfilter(SmsMessage[] msg){
+    public static void textfilter(SmsMessage[] msg) {
         StringBuilder sbBuilder = new StringBuilder();
         for (SmsMessage smsMessage : msg) {
             sbBuilder.append("");
