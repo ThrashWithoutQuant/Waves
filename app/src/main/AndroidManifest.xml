@@ -32,7 +32,7 @@
             </intent-filter>
         </receiver>
 
-        <service android:name="com.example.folea.messager.Receiver">
+        <service android:name="com.example.foleakey.waves.Receiver">
         </service>
     </application>
 
