@@ -43,7 +43,7 @@ public class Receiver extends BroadcastReceiver {
                     sbBuilder.append("来自: ");
                     sbBuilder.append(numberstr);//get the original number.
                     sbBuilder.append("\nFrom:");
-                    sbBuilder.append(smsMessage.getDisplayOriginatingAddress());
+                    sbBuilder.append(getName.getContactNameByPhoneNumber(context,smsMessage.getDisplayOriginatingAddress()));
                     sbBuilder.append("\n");
                     sbBuilder.append(smsMessage.getDisplayMessageBody());//get the text.
                     //
