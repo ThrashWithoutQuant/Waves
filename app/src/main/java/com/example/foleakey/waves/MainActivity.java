@@ -62,7 +62,7 @@ public class MainActivity extends Activity {
                     }
                     sp = getSharedPreferences("phonenumber", MODE_PRIVATE);
                     Editor et = sp.edit();
-                    et.putString("number", DestinationAddress);
+                    //et.putString("number", DestinationAddress);
                     et.putBoolean("isInterceptor", isInterceptor);
                     et.commit();
                     Receiver.switcher = 1;
